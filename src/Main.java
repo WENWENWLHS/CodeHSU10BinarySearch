@@ -43,8 +43,11 @@ public class Main {
     public static int binarySearch(int[] array, int target, int start, int end){
 
             int mid = (start + end)/2;
-                    if(target == array[mid]){ // base case
+                    if(target == array[mid]){ // base case if target in list
                         return mid;
+                    }
+                    if(start == end){ // base case if target not in list
+                        return -1;
                     }
                     if(target < array[mid]){
                         return binarySearch(array,target, start, mid-1);
